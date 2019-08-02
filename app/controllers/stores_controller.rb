@@ -1,8 +1,4 @@
-class HomepagesController < ApplicationController
-
-  def index
-    @store = Store.all
-  end
+class StoresController < ApplicationController
 
   def new
     @store = Store.new
@@ -19,5 +15,4 @@ class HomepagesController < ApplicationController
     params.require(:store).permit(:name, :description, :address)
   end
 
-  
 end
