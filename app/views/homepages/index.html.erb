@@ -1,9 +1,17 @@
-<% @stores.each do |store| %>
+
+<br />
+<%= link_to 'New Store', new_store_path %>
+<br />
+<br />
+
+<div class="container">
+<% @store.each do |s| %>
   <div>
-  <h1><%= store.name %></h1><br />
-  <i><%=  store.address %></i><br />
-  <p><%=  store.description %></p><br />
+  <h1><%= s.name %></h1><br />
+  <i><%=  s.address %></i><br />
+  <p><%=  s.description %></p><br />
   </div>
 
   <hr />
 <% end %>
+</div>

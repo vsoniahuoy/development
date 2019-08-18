@@ -1,12 +1,20 @@
 class StoresController < ApplicationController
 
+  def index
+
+  end
+
   def new
     @store = Store.new
   end
 
   def create
     @store = Store.create(store_params)
-    redirect_to root_path
+    if @store.valid?
+      redirect_to root_path
+   else
+      render :new, status: :unprocessable_entity
+   end
   end
 
   private
